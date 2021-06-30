@@ -4,7 +4,7 @@ import { NativeModules, Platform } from 'react-native';
 import Providers from './providers';
 
 import Nav from './nav/Nav';
-import { DevNavigator } from './dev';
+import * as Dev from './dev';
 
 if (Platform.OS === 'android') {
   const { UIManager } = NativeModules;
@@ -16,7 +16,7 @@ interface AppProps {}
 
 const App = (props: AppProps) => (
   <Providers>
-    <DevNavigator />
+    <Dev.DevNavigator />
   </Providers>
 );
 
