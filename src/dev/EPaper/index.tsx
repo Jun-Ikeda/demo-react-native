@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   Platform,
   StatusBar,
+  View,
 } from 'react-native';
 import {
   Text,
@@ -122,14 +123,14 @@ const EPaper = (props: EPaperProps) => {
     );
   };
   return (
-    <EContainer style={styles.container}>
+    <View style={styles.container}>
       <SafeAreaView style={{ flex: 1 }}>
         <Text>HelloWorld</Text>
         {renderButtons()}
         {renderCard()}
         {renderFAB()}
       </SafeAreaView>
-    </EContainer>
+    </View>
   );
 };
 
