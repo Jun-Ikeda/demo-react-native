@@ -34,9 +34,12 @@ const styles = StyleSheet.create({
 });
 
 const TabIconShape = () => {
-  const d = 'm10 5c10-5 30-5 40 0c2.5 1.25 3.75 2.5 5 5c5 10 5 30 0 40c-1.25 2.5-2.5 3.75-5 5c-10 5-30 5-40 0c-2.5-1.25-3.75-2.5-5-5c-5-10-5-30 0-40c1.25-2.5 2.5-3.75 5-5';
+  const d = 'M 15 5 C 23 1 37 1 45 5 C 49 7 53 11 55 15 C 59 23 59 37 55 45 C 53 49 49 53 45 55 C 37 59 23 59 15 55 C 11 53 7 49 5 45 C 1 36 1 23 5 15 C 7 11 11 7 15 5';
   return (
-    <Svg style={{ height: 60, width: 60 }}>
+    <Svg style={{
+      height: 60, width: 60,
+    }}
+    >
       <Path d={d} stroke="white" fill="white" />
     </Svg>
   );
@@ -96,9 +99,14 @@ const SVG = (props: SVGProps) => {
         }}
         >
           <TabsContainerShape x={x} />
-          <TabIconShape />
-          <TabIconShape />
-          <TabIconShape />
+          <View style={{
+            flexDirection: 'row', justifyContent: 'space-around', position: 'absolute', right: 0, bottom: 0, left: 0, top: 0,
+          }}
+          >
+            <TabIconShape />
+            <TabIconShape />
+            <TabIconShape />
+          </View>
         </View>
         <EButton
           mode="contained"
