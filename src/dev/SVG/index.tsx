@@ -33,13 +33,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const TabIconShape = () => {
+const TabIconShape = ({ style }) => {
   const d = 'M 15 5 C 23 1 37 1 45 5 C 49 7 53 11 55 15 C 59 23 59 37 55 45 C 53 49 49 53 45 55 C 37 59 23 59 15 55 C 11 53 7 49 5 45 C 1 36 1 23 5 15 C 7 11 11 7 15 5';
   return (
-    <Svg style={{
-      height: 60, width: 60,
-    }}
-    >
+    <Svg style={[{ height: 60, width: 60 }, style]}>
       <Path d={d} stroke="white" fill="white" />
     </Svg>
   );
@@ -86,6 +83,8 @@ const TabsContainerShape = ({ x }) => {
 
 const SVG = (props: SVGProps) => {
   const [x, setX] = React.useState(0);
+  const [y1, setY1] = React.useState(90);
+  const [y3, setY3] = React.useState(90);
   return (
     <EContainer style={styles.container}>
       <SafeAreaView style={{ flex: 1 }}>
@@ -100,12 +99,20 @@ const SVG = (props: SVGProps) => {
         >
           <TabsContainerShape x={x} />
           <View style={{
-            flexDirection: 'row', justifyContent: 'space-around', position: 'absolute', right: 0, bottom: 0, left: 0, top: 0,
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            borderWidth: 1,
+            borderColor: 'white',
+            height: 150,
+            position: 'absolute',
+            bottom: -60,
+            right: 0,
+            left: 0,
           }}
           >
-            <TabIconShape />
-            <TabIconShape />
-            <TabIconShape />
+            <TabIconShape style={{ top: y1 }} />
+            <TabIconShape style={{ top: 90 }} />
+            <TabIconShape style={{ top: y3 }} />
           </View>
         </View>
         <EButton
@@ -113,6 +120,8 @@ const SVG = (props: SVGProps) => {
           onPress={() => {
             LayoutAnimation.easeInEaseOut();
             setX(-threshold);
+            setY3(90);
+            setY1(0);
           }}
         >
           Left
@@ -122,6 +131,8 @@ const SVG = (props: SVGProps) => {
           onPress={() => {
             LayoutAnimation.easeInEaseOut();
             setX(threshold);
+            setY3(0);
+            setY1(90);
           }}
         >
           Right
