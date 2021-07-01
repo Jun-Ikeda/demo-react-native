@@ -3,6 +3,7 @@ import * as React from 'react';
 import EPaper from '../EPaper';
 import SVG from '../SVG';
 import Neumorphic from '../Neumorphic';
+import Firebase from '../Firebase';
 
 // export const navigationRef = React.createRef();
 
@@ -14,4 +15,5 @@ export const tabs = [
   { name: 'EPaper', component: EPaper },
   { name: 'SVG', component: SVG },
   { name: 'Neumorphic', component: Neumorphic },
+  { name: 'Firebase', component: Firebase },
 ];
