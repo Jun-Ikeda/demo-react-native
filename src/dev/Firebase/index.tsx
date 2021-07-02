@@ -14,7 +14,18 @@ const Firebase = (props: FirebaseProps) => (
       firestore.collection('test').doc('id').set({ message: 'Hello World' });
     }}
     >
-      test
+      Write
+    </EButton>
+    <EButton
+      onPress={() => {
+        firestore.collection('test').doc('id').get().then((doc) => {
+          if (doc.exists) {
+            console.log(doc.data());
+          }
+        });
+      }}
+    >
+      Get
     </EButton>
   </View>
 );

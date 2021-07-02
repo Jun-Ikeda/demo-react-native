@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { NativeModules, Platform } from 'react-native';
+import { NativeModules, Platform, LogBox } from 'react-native';
 
 import Providers from './providers';
 
 import Nav from './nav/Nav';
 import * as Dev from './dev';
+
+LogBox.ignoreAllLogs();
 
 if (Platform.OS === 'android') {
   const { UIManager } = NativeModules;
