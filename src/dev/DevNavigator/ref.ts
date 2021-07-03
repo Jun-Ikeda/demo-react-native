@@ -4,6 +4,7 @@ import EPaper from '../EPaper';
 import SVG from '../SVG';
 import Neumorphic from '../Neumorphic';
 import Redux from '../Redux';
+import AdMob from '../admob';
 
 // export const navigationRef = React.createRef();
 
@@ -16,4 +17,5 @@ export const tabs = [
   { name: 'SVG', component: SVG },
   { name: 'Neumorphic', component: Neumorphic },
   { name: 'Redux', component: Redux },
+  { name: 'AdMob', component: AdMob },
 ];
