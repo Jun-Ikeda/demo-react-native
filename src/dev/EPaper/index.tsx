@@ -123,14 +123,14 @@ const EPaper = (props: EPaperProps) => {
     );
   };
   return (
-    <View style={styles.container}>
+    <EContainer style={styles.container}>
       <SafeAreaView style={{ flex: 1 }}>
         <Text>HelloWorld</Text>
         {renderButtons()}
         {renderCard()}
         {renderFAB()}
       </SafeAreaView>
-    </View>
+    </EContainer>
   );
 };
 
