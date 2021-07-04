@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { INITIAL_STATE, ITestState, ITestStateAction } from './config';
 
-const reducer = (
+const userReducer = (
   state: ITestState = INITIAL_STATE,
   action: ITestStateAction,
 ): ITestState => {
@@ -15,6 +15,20 @@ const reducer = (
   }
 };
 
+const counterReducer = (state = 0, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'INCREMENT_IF_ODD':
+      return (state % 2 !== 0) ? state + 1 : state;
+    case 'DECREMENT':
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
 export const reducers = combineReducers({
-  user: reducer,
+  user: userReducer,
+  counter: counterReducer,
 });

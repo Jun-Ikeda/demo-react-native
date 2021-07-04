@@ -4,6 +4,7 @@ import { Text } from 'react-native-paper';
 import { Provider } from 'react-redux';
 import Detail1 from './Detail1';
 import Detail2 from './Detail2';
+import Counter from './Counter';
 
 import { store } from './store';
 
@@ -15,6 +16,7 @@ const Redux = (props: ReduxProps) => (
       <Text>Redux</Text>
       <Detail1 />
       <Detail2 />
+      <Counter />
     </View>
   </Provider>
 );

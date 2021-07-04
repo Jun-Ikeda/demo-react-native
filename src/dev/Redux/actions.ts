@@ -10,3 +10,11 @@ export const setName = (name: string): ITestStateAction => ({
   type: 'ADD_NAME',
   name,
 });
+
+export const increase = () => ({
+  type: 'INCREMENT',
+});
+
+export const decrease = () => ({
+  type: 'DECREMENT',
+});
